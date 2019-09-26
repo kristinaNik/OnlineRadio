@@ -15,11 +15,12 @@ class RadioPlayerResource extends JsonResource
     public function toArray($request)
     {
         return [
-          'id' => $this->id,
-          'title' => $this->title,
-          'album' => $this->album,
-          'duration' => $this->duration,
-          'next' => $this->next
+            'id' => $this->id,
+            'title' => $this->title,
+            'album' => $this->album,
+            'genre' => $this->genre,
+            'duration' => $this->duration,
+            'next' => $this->next
         ];
     }
 }

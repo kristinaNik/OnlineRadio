@@ -8,6 +8,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="{{route('import')}}">Import Songs</a>
+            <a class="navbar-brand" href="{{route('playlist.show')}}">Playlist</a>
             <a class="navbar-brand" href="">View Statistics</a>
         </div>
 

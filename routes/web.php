@@ -13,4 +13,8 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('import');
+
+Route::get('/playlist', function () {
+    return view('show');
+})->name('playlist.show');

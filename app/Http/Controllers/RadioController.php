@@ -10,18 +10,15 @@ use Illuminate\Routing\Controller;
 
 class RadioController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
+        $radioPlayer = RadioPlayer::orderBy('id', 'desc')->get();
 
-
-
-
-
+        return RadioPlayerResource::collection($radioPlayer);
     }
 
     /**
@@ -48,6 +45,7 @@ class RadioController extends Controller
 
         $radioPlayer->title = $musicData['title'];
         $radioPlayer->album = $musicData['album'];
+        $radioPlayer->genre = $musicData['genre'];
         $radioPlayer->duration = $musicData['duration'];
         $radioPlayer->next = $musicData['next'];
 

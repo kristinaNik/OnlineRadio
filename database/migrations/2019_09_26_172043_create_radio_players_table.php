@@ -17,6 +17,7 @@ class CreateRadioPlayersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('album');
+            $table->string('genre');
             $table->time('duration');
             $table->time('next');
             $table->timestamps();

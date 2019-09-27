@@ -29,3 +29,4 @@ Route::get('/statistics/longest_song', 'StatisticsController@getLongestSong');
 Route::get('/statistics/shortest_song', 'StatisticsController@getShortestSong');
 Route::get('/statistics/most_played_song','StatisticsController@getMostPlayedSong');
 Route::get('/statistics/genre_most_played_song','StatisticsController@getGenreOfMostPlayedSong');
+Route::get('/statistics/most_popular_genre', 'StatisticsController@getMostPopularGenre');

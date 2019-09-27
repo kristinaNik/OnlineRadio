@@ -8,7 +8,7 @@
     <h2>Statistics</h2>
     <form>
         <ul class="list-group">
-            <li class="list-group-item">Most played song</li>
+            <li class="list-group-item" id="most_played_song">Most played song</li>
             <li class="list-group-item" id="longest_song">The longest song</li>
             <li class="list-group-item" id="shortest_song">The shortest song</li>
             <li class="list-group-item">Genre of most played song</li>

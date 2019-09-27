@@ -53,6 +53,15 @@ class RadioController extends Controller
 
     }
 
+
+    public function savePlayedSongs(Request $request, PlayerRepository $playerRepository) {
+        $id = $request->input('song_id');
+
+        $playerRepository->savePlayedSongs($id);
+
+        return response()->json(['Message' => 'Played song with id ' . $id ]);
+    }
+
     /**
      * Get Titles
      *

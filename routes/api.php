@@ -22,6 +22,7 @@ Route::get('/radio', 'RadioController@index');
 Route::get('/radio/get_titles', 'RadioController@getTitles');
 Route::get('/radio/get_genres', 'RadioController@getGenres');
 Route::post('radio/create', 'RadioController@store');
+Route::post('radio/save_songs', 'RadioController@savePlayedSongs');
 
 
 Route::get('/statistics/longest_song', 'StatisticsController@getLongestSong');

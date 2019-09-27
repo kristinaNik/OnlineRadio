@@ -9,6 +9,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\PlayerRepositoryInterface;
+use App\PlaylistPlay;
 use App\RadioPlayer;
 use Illuminate\Support\Facades\DB;
 
@@ -64,4 +65,17 @@ class PlayerRepository implements PlayerRepositoryInterface
         return $radioPlayer;
     }
 
+    /**
+     * @param $id
+     * @return PlaylistPlay
+     */
+    public function savePlayedSongs($id) {
+        $playlistPlay = new PlaylistPlay();
+
+        $playlistPlay->song_id = $id;
+
+        $playlistPlay->save();
+
+        return $playlistPlay;
+    }
 }

@@ -17,8 +17,7 @@ $(document).ready(function () {
                         $.each(item, function (j, data) {
 
                             trHTML += '<input type="hidden" value="' + data.duration + '"><tr><td>' + data.title + '</td><td>' + data.album + '</td><td>' + data.genre + '</td><td>' +
-                                data.duration + '</td><td>' + '<input type="button" class="btn btn-default" id="play" onclick="showPlayer()" value="Play"><audio controls class="hidden" id="player"></audio></td>' +
-                                '</tr>';
+                                data.duration + '</td></tr>';
 
                         });
 
@@ -48,8 +47,7 @@ $(document).ready(function () {
                     $.each(item, function (j, data) {
 
                         trHTML += '<input type="hidden" value="' + data.duration + '"><tr><td>' + data.title + '</td><td>' + data.album + '</td><td>' + data.genre + '</td><td>' +
-                            data.duration + '</td><td>' + '<input type="button" class="btn btn-default" id="play" onclick="showPlayer()" value="Play"><audio controls class="hidden" id="player"></audio></td>' +
-                            '</tr>';
+                            data.duration + '</td></tr>';
 
                     });
 

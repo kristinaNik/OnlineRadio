@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('import');
 })->name('import');
 
 Route::get('/search', 'RadioController@index')->name('search.action');

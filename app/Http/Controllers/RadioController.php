@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\RadioPlayerResource;
 use App\Repositories\PlayerRepository;
+
 use Illuminate\Routing\Controller;
+use \Illuminate\Http\Request;
 
 
 class RadioController extends Controller
@@ -16,9 +18,17 @@ class RadioController extends Controller
      * @param PlayerRepository $playerRepository
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
-    public function index(PlayerRepository $playerRepository)
+    public function index(Request $request, PlayerRepository $playerRepository)
     {
-        $radioPlayer = $playerRepository->getPlaylist();
+        $query = $request->get('query');
+
+        if ($query != '') {
+            $radioPlayer = $playerRepository->searchTitle($query);
+        } else {
+            $radioPlayer = $playerRepository->getPlaylist();
+
+
+        }
 
         return RadioPlayerResource::collection($radioPlayer);
     }

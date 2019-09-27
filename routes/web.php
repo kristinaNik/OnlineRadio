@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 })->name('import');
 
+Route::get('/search', 'RadioController@index')->name('search.action');
+
 Route::get('/playlist', function () {
     return view('show');
 })->name('playlist.show');

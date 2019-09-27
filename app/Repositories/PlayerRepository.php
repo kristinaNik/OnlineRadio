@@ -16,6 +16,18 @@ class PlayerRepository implements PlayerRepositoryInterface
 {
 
     /**
+     * @param $searchParam
+     * @return mixed
+     */
+    public function searchTitle($searchParam)
+    {
+        return RadioPlayer::where('id','=', $searchParam)
+            ->get();
+
+    }
+
+
+    /**
      * @return mixed
      */
     public function getPlaylist()

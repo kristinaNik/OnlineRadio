@@ -23,4 +23,20 @@ class PlaylistPlay extends Model
             ->get();
 
     }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeGenreOfMostPlayedSong($query) {
+
+        return $query->selectRaw(' song_id, rp.genre,
+          COUNT(song_id) AS value_occurrence')
+            ->join('radio_players as rp', 'song_id', '=', 'rp.id')
+            ->groupBy('song_id')
+            ->orderBy('value_occurrence', 'DESC')
+            ->limit(1)
+            ->get();
+
+    }
 }

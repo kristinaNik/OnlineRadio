@@ -42,4 +42,10 @@ class StatisticsController extends Controller
 
         return RadioPlayerResource::collection($mostPlayedSong);
     }
+
+    public function getGenreOfMostPlayedSong() {
+        $genrePlayedSong = PlaylistPlay::genreOfMostPlayedSong();
+
+        return RadioPlayerResource::collection($genrePlayedSong);
+    }
 }

@@ -11,7 +11,7 @@
             <li class="list-group-item" id="most_played_song">Most played song</li>
             <li class="list-group-item" id="longest_song">The longest song</li>
             <li class="list-group-item" id="shortest_song">The shortest song</li>
-            <li class="list-group-item">Genre of most played song</li>
+            <li class="list-group-item" id="genre_most_played_song">Genre of most played song</li>
         </ul>
     </form>
 

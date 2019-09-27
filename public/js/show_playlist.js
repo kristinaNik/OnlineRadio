@@ -10,8 +10,8 @@ $(document).ready(function () {
                 size = Object.keys(item).length;
                 $.each(item, function (j, data) {
 
-                    trHTML += '<tr><td>' + data.title + '</td><td>' + data.album + '</td><td>' + data.genre + '</td><td>' +
-                        data.duration + '</td><td>' + '<input type="button" class="btn btn-default" id="delete_user"  value="Play"></td>' +
+                    trHTML += '<input type="hidden" value="'+data.duration+'"><tr><td>' + data.title + '</td><td>' + data.album + '</td><td>' + data.genre + '</td><td>' +
+                        data.duration + '</td><td>' + '<input type="button" class="btn btn-default" id="play" onclick="showPlayer()" value="Play"><audio controls class="hidden" id="player"></audio></td>' +
                         '</tr>';
 
                 });
@@ -20,4 +20,17 @@ $(document).ready(function () {
             });
         }
     });
+
+
+
+
 });
+function showPlayer() {
+    console.log($("input[type=hidden]").val());
+
+    $('#player').removeClass('hidden');
+
+    var audio = document.getElementById("audio");
+    audio.play();
+
+}

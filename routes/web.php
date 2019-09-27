@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/playlist', function () {
     return view('show');
 })->name('playlist.show');
+
+Route::get('/statistics', function () {
+    return view('statistics');
+})->name('playlist.statictics');

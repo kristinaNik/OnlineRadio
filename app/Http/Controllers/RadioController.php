@@ -41,4 +41,31 @@ class RadioController extends Controller
 
     }
 
+    /**
+     * Get Titles
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function getTitles(PlayerRepository $playerRepository) {
+
+        $titles = $playerRepository->getTitles();
+
+        return response()->json(['data' => $titles]);
+
+    }
+
+
+    /**
+     * Get Genres
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function getGenres(PlayerRepository $playerRepository) {
+
+        $genres = $playerRepository->getGenres();
+
+        return response()->json(['data' => $genres]);
+
+    }
+
 }

@@ -4,12 +4,11 @@
    Online radio
 @endsection
 @section('content')
-    <div class="container">
+
         <h2>Import songs</h2>
 
     <form id="radioForm" enctype="multipart/form-data">
         <div class="form-group">
-            <label>Select file</label>
             <input type="file" name="file" id="file" />
         </div>
         <div class="form-group">
@@ -17,7 +16,7 @@
         </div>
     </form>
         <span id="message" style="color: green"></span>
-    </div>
+
     <script src="js/add_music.js"></script>
 @endsection
 

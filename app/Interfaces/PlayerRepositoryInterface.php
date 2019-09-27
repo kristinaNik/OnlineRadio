@@ -15,4 +15,8 @@ interface PlayerRepositoryInterface
     public function store($musicData);
 
     public function getPlaylist();
+
+    public function getTitles();
+
+    public function getGenres();
 }

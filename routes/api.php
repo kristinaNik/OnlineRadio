@@ -19,4 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/radio', 'RadioController@index');
+Route::get('/radio/get_titles', 'RadioController@getTitles');
+Route::get('/radio/get_genres', 'RadioController@getGenres');
 Route::post('radio/create', 'RadioController@store');
+
+
+Route::get('/statistics/longest_song', 'StatisticsController@getLongestSong');
+Route::get('/statistics/shortest_song', 'StatisticsController@getShortestSong');

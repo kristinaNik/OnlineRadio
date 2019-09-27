@@ -10,6 +10,7 @@ namespace App\Repositories;
 
 use App\Interfaces\PlayerRepositoryInterface;
 use App\RadioPlayer;
+use Illuminate\Support\Facades\DB;
 
 class PlayerRepository implements PlayerRepositoryInterface
 {
@@ -22,6 +23,14 @@ class PlayerRepository implements PlayerRepositoryInterface
         return RadioPlayer::orderBy('id', 'desc')->get();
     }
 
+    public function getTitles() {
+
+        return DB::table('radio_players')->select('id', 'title')->get();
+    }
+
+    public function getGenres() {
+        return DB::table('radio_players')->selectRaw('DISTINCT genre')->get();
+    }
 
     /**
      * @param $musicData

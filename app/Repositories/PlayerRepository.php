@@ -27,6 +27,18 @@ class PlayerRepository implements PlayerRepositoryInterface
 
     }
 
+    /**
+     * @param $searchParam
+     * @return mixed
+     */
+    public function searchGenre($searchParam)
+    {
+        return RadioPlayer::where('genre','LIKE', '%' . $searchParam . '%')
+            ->get();
+
+    }
+
+
 
     /**
      * @return mixed

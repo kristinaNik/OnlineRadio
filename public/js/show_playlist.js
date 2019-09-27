@@ -1,12 +1,12 @@
 $(document).ready(function () {
     fetch_data();
 
-    function fetch_data(query='') {
+    function fetch_data(title='', genre='') {
         $("#titles option:selected").each(function() {
                 $.ajax({
                     url: "search",
                     method: 'GET',
-                    data: {query: query},
+                    data: {title: title, genre: genre},
                     dataType: 'json',
                     success: function (data) {
 
@@ -30,8 +30,9 @@ $(document).ready(function () {
     window.addEventListener('load', function () {
         $('#search_playlist').on('click', function (e) {
             e.preventDefault();
-            var query = $('#titles').val();
-            fetch_data(query);
+            var title = $('#titles').val();
+            var genre = $('#genres').val();
+            fetch_data(title, genre);
 
         });
 

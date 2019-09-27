@@ -22,11 +22,15 @@ class RadioController extends Controller
      */
     public function index(Request $request, PlayerRepository $playerRepository)
     {
-        $query = $request->get('query');
+        $title = $request->get('title');
+        $genre = $request->get('genre');
 
-        if ($query != '') {
-            $radioPlayer = $playerRepository->searchTitle($query);
-        } else {
+        if ($title != '') {
+            $radioPlayer = $playerRepository->searchTitle($title);
+        }  else if ($genre != '') {
+            $radioPlayer = $playerRepository->searchGenre($genre);
+        }
+        else {
             $radioPlayer = $playerRepository->getPlaylist();
 
 

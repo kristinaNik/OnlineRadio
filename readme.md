@@ -13,10 +13,10 @@
 
 - **php artisan serve**
 - **php artisan migrate**
-- **import xml files**
+- **import xml files from `example songs` folder in project**
 
 
-##Functionalities
+## Functionalities
 - **Import xml song that will be saved in database**
 - **Search by title/artist and by genre**
 - **Important: Search for the particular title or genre, and then based on the click of button Play, it will be saved each time the result in table `plalist_plays`**
